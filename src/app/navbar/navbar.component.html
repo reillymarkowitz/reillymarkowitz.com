@@ -1,1 +1,15 @@
-<p>navbar works!</p>
+<div>
+    <mat-toolbar color="primary">
+        <div>Reilly Markowitz</div>
+        <div>
+            <button mat-button [matMenuTriggerFor]="menu">Links</button>
+            <mat-menu #menu>
+                <a mat-menu-item href="https://github.com/reillymarkowitz">GitHub</a>
+                <a mat-menu-item href="https://twitter.com/ReillyMarkowitz">Twitter</a>
+            </mat-menu>
+    
+            <a mat-button href="#!/projects">Projects</a>
+        </div>
+    </mat-toolbar>
+</div>
+
