@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule } from '@angular/material';
+import { ProjectPageComponent } from './project-page/project-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProjectPageComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +20,7 @@ import { MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule } from 
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
