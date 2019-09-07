@@ -10,10 +10,8 @@ export class ProjectPageComponent implements OnInit {
   projectCards: ProjectCardComponent[];
 
   constructor() {
-    const test1 = new ProjectCardComponent("helllo", "goodbye");
-    const test2 = new ProjectCardComponent("heu", "yoooooo");
-
-    this.projectCards = [test1, test2];
+    const test1 = new ProjectCardComponent('Barnsley Fern Fractal', 'A simple mathematically generated fractal written in Python.');
+    this.projectCards = [test1];
   }
 
   ngOnInit() {
