@@ -4,14 +4,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule } from '@angular/material';
+import { MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule, MatCardModule } from '@angular/material';
 import { ProjectPageComponent } from './project-page/project-page.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ProjectPageComponent
+    ProjectPageComponent,
+    ProjectCardComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +23,7 @@ import { ProjectPageComponent } from './project-page/project-page.component';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
