@@ -7,7 +7,6 @@ import { AngularFirestore, AngularFirestoreCollection, DocumentData } from '@ang
 export class ProjectService {
   projectsCollection: AngularFirestoreCollection;
   
-
   constructor(db: AngularFirestore) {
     this.projectsCollection = db.collection('projects');
   }

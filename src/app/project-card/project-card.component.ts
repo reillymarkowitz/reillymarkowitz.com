@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
 
 @Component({
-  selector: 'app-project-card',
+  selector: 'project-card',
   templateUrl: './project-card.component.html',
-  styleUrls: ['./project-card.component.css']
+  styleUrls: ['./project-card.component.css'],
+  providers: [ProjectService]
 })
 export class ProjectCardComponent implements OnInit {
   title: string;

@@ -11,7 +11,6 @@ import { AngularFireModule, FirebaseOptions } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
-import { ProjectService } from './project.service';
 import { VideoBackgroundComponent } from './video-background/video-background.component';
 
 const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
@@ -20,8 +19,8 @@ const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
   declarations: [
     AppComponent,
     NavbarComponent,
-    ProjectPageComponent,
     ProjectCardComponent,
+    ProjectPageComponent,
     VideoBackgroundComponent
   ],
   imports: [
@@ -37,7 +36,7 @@ const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
     MatToolbarModule,
     MatCardModule
   ],
-  providers: [ProjectService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
