@@ -10,23 +10,19 @@ import { ProjectCardComponent } from './project-card/project-card.component';
 import { AngularFireModule, FirebaseOptions } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { environment } from 'src/environments/environment';
+import { ProjectService } from './project.service';
+import { VideoBackgroundComponent } from './video-background/video-background.component';
 
-const firebaseConfig: FirebaseOptions = {
-  apiKey: "AIzaSyBvv6NiUc-CHSToCIwvR5IwbPP1wt_431Q",
-  authDomain: "personal-site-72fd5.firebaseapp.com",
-  databaseURL: "https://personal-site-72fd5.firebaseio.com",
-  projectId: "personal-site-72fd5",
-  storageBucket: "",
-  messagingSenderId: "663936670149",
-  appId: "1:663936670149:web:d80dd04675f858a96613ac"
-};
+const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ProjectPageComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    VideoBackgroundComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +37,7 @@ const firebaseConfig: FirebaseOptions = {
     MatToolbarModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

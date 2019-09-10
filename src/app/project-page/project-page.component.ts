@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectCardComponent } from '../project-card/project-card.component';
+import { ProjectService } from '../project.service';
 
 @Component({
   selector: 'project-page',
@@ -9,9 +10,9 @@ import { ProjectCardComponent } from '../project-card/project-card.component';
 export class ProjectPageComponent implements OnInit {
   projectCards: ProjectCardComponent[];
 
-  constructor() {
-    const test1 = new ProjectCardComponent('Barnsley Fern Fractal', 'A simple mathematically generated fractal written in Python.');
-    this.projectCards = [test1];
+  constructor(projectService: ProjectService) {
+    const fractal = new ProjectCardComponent(projectService, 'odFdkC586V8Rw295AATu');
+    this.projectCards = [fractal];
   }
 
   ngOnInit() {
