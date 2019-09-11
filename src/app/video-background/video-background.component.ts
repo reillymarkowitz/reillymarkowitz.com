@@ -10,6 +10,8 @@ export class VideoBackgroundComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    const video = <HTMLVideoElement>document.getElementById('videoBackground');
+    video.muted = true;
   }
 
 }

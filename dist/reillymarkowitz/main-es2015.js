@@ -699,6 +699,8 @@ __webpack_require__.r(__webpack_exports__);
 let VideoBackgroundComponent = class VideoBackgroundComponent {
     constructor() { }
     ngOnInit() {
+        const video = document.getElementById('videoBackground');
+        video.muted = true;
     }
 };
 VideoBackgroundComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
