@@ -12,6 +12,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { VideoBackgroundComponent } from './video-background/video-background.component';
+import { NameBoxComponent } from './name-box/name-box.component';
 
 const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
 
@@ -21,7 +22,8 @@ const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
     NavbarComponent,
     ProjectCardComponent,
     ProjectPageComponent,
-    VideoBackgroundComponent
+    VideoBackgroundComponent,
+    NameBoxComponent
   ],
   imports: [
     BrowserModule,
