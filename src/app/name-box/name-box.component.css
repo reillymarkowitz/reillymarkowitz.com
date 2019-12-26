@@ -8,9 +8,17 @@
     padding: 3% 5%;
 }
 
-.name {
+span {
+    display: block;
     font-family: "Courier New", Courier, monospace;
     text-align: center;
-    font-size: 50px;
     color: white;
+}
+
+.name {
+    font-size: 50px;
+}
+
+.title {
+    font-size: 25px;
 }
