@@ -1,11 +1,3 @@
-.name-box {
-    height: 10%;
-    width: 100%;
-    border-style: solid;
-    border-color: white;
-    padding: 3% 5%;
-}
-
 span {
     display: block;
     font-family: "Courier New", Courier, monospace;
@@ -14,7 +6,10 @@ span {
 }
 
 .name {
-    font-size: 50px;
+    text-align: center;
+    margin-left: 5%;
+    font-size: 40px;
+    width: 90%;
 }
 
 .title {
