@@ -14,8 +14,4 @@ export class NavigationComponent implements OnInit {
     
   }
 
-  doSomething() {
-    console.log('here');
-  }
-
 }

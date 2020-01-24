@@ -1,11 +1,6 @@
-span {
-    padding-right: 10%;
-    font-family: "Courier New", Courier, monospace;
-    color: white;
-}
-
 a {
     padding-right: 10%;
     font-family: "Courier New", Courier, monospace;
+    font-size: 30px;
     color: white;
 }
