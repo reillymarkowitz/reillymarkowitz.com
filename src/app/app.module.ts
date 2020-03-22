@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule, MatCardModule } from '@angular/material';
 import { ProjectPageComponent } from './project-page/project-page.component';
-import { ProjectCardComponent } from './project-card/project-card.component';
 import { AngularFireModule, FirebaseOptions } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -19,7 +18,6 @@ const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectCardComponent,
     ProjectPageComponent,
     VideoBackgroundComponent,
     NameBoxComponent,
