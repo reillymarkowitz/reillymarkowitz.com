@@ -1,0 +1,23 @@
+name: Angular Continuous Integration
+
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened, edited ]
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@master
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Setup Node
+        uses: actions/setup-node@master
+        with:
+          node-version: 12
+      - name: Install Node dependencies
+        run: npm ci
+      - name: Run unit tests
+        run: npm test
