@@ -24,12 +24,12 @@ describe('NameBoxComponent', () => {
   });
 
   it('should display the correct name', () => {
-    const nameElement = fixture.debugElement.query(By.css('.name')).nativeNode as HTMLSpanElement;
+    const nameElement = fixture.debugElement.query(By.css('.name')).nativeElement as HTMLSpanElement;
     expect(nameElement.innerText).toBe('Reilly Markowitz');
   });
 
   it('should display the correct job title', () => {
-    const titleElement = fixture.debugElement.query(By.css('.title')).nativeNode as HTMLSpanElement;
+    const titleElement = fixture.debugElement.query(By.css('.title')).nativeElement as HTMLSpanElement;
     expect(titleElement.innerText).toBe('Software Engineer');
   });
 });
