@@ -4,3 +4,10 @@ a {
     font-size: 30px;
     color: white;
 }
+
+@media only screen and (max-width: 600px) {
+    a {
+        display: block;
+        padding-bottom: 20%;
+    }
+}
