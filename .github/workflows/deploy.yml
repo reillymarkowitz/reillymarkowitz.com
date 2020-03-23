@@ -8,7 +8,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout master
+      - name: Checkout master branch
         uses: actions/checkout@master
       - name: Setup Node
         uses: actions/setup-node@master
