@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule, MatCardModule } from '@angular/material';
 import { AngularFireModule, FirebaseOptions } from '@angular/fire';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -27,12 +26,7 @@ const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
-    AngularFireStorageModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatCardModule
+    AngularFireStorageModule
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]
