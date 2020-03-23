@@ -1,4 +1,6 @@
-# Reillymarkowitz
+# reillymarkowitz.com
+
+![Build Status](https://github.com/reillymarkowitz/reillymarkowitz.com/workflows/Firebase%20Continuous%20Deployment/badge.svg)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
 
