@@ -22,6 +22,7 @@ navigation {
         top: 15%;
         left: 10%;
         width: 80%;
-        height: 22%;
+        height: 25%;
+        border-style: hidden;
     }
 }
