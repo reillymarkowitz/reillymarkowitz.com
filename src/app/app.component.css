@@ -25,4 +25,8 @@ navigation {
         height: 25%;
         border-style: hidden;
     }
+
+    navigation {
+        left: 5%;
+    }
 }
