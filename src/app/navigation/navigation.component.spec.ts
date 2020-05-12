@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavigationComponent } from './navigation.component';
 import { By } from '@angular/platform-browser';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFireModule, FirebaseOptions } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+
+const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
 
 describe('NavigationComponent', () => {
   let component: NavigationComponent;
@@ -8,7 +13,11 @@ describe('NavigationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavigationComponent ]
+      declarations: [ NavigationComponent ],
+      imports: [
+        AngularFireModule.initializeApp(firebaseConfig)
+      ],
+      providers: [ AngularFireStorage ]
     })
     .compileComponents();
   }));

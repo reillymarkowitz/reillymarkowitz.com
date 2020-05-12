@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule, FirebaseOptions } from '@angular/fire';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireStorageModule, AngularFireStorage } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { VideoBackgroundComponent } from './video-background/video-background.component';
 import { NameBoxComponent } from './name-box/name-box.component';
