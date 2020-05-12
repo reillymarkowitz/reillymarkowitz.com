@@ -4,19 +4,29 @@ import { AppComponent } from './app.component';
 import { VideoBackgroundComponent } from './video-background/video-background.component';
 import { NameBoxComponent } from './name-box/name-box.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { AngularFireStorageModule, AngularFireStorage } from '@angular/fire/storage';
+import { AngularFireModule, FirebaseOptions } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
+
+const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
       declarations: [
         AppComponent,
         VideoBackgroundComponent,
         NameBoxComponent,
         NavigationComponent
-      ]
+      ],
+      imports: [
+        RouterTestingModule,
+        AngularFireModule.initializeApp(firebaseConfig),
+        AngularFirestoreModule,
+        AngularFireStorageModule
+      ],
+      providers: [AngularFirestore, AngularFireStorage]
     }).compileComponents();
   }));
 
