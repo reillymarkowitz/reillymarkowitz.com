@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
   constructor(private storage: AngularFireStorage) { }
 
   ngOnInit() {
-    const resumePath = 'Resumes/Spring 2020.pdf';
+    const resumePath = 'Reilly_Markowitz.pdf';
     const resumeRef = this.storage.ref(resumePath);
     resumeRef.getDownloadURL().subscribe(
       url => {
