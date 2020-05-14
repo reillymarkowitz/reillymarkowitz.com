@@ -5,8 +5,6 @@ name-box {
     left: 25%;
     width: 50%;
     height: 20%;
-    border-style: solid;
-    border-color: white;
     padding: 3% 1%;
 }
 
@@ -27,6 +25,7 @@ navigation {
     }
 
     navigation {
-        left: 5%;
+        left: 0%;
+        top: 15%;
     }
 }
