@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 import { VideoBackgroundComponent } from './video-background/video-background.component';
 import { NameBoxComponent } from './name-box/name-box.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { SliderButtonComponent } from './slider-button/slider-button.component';
 
 const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
 
@@ -18,7 +19,8 @@ const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
     AppComponent,
     VideoBackgroundComponent,
     NameBoxComponent,
-    NavigationComponent
+    NavigationComponent,
+    SliderButtonComponent
   ],
   imports: [
     BrowserModule,

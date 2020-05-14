@@ -48,7 +48,11 @@ span {
         font-size: 12vw;
     }
 
+    .title {
+        width: 96%;
+    }
+
     .title h1 {
-        font-size: 3.5vw;
+        font-size: 6vw;
     }
 }

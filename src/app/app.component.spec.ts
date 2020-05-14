@@ -8,6 +8,7 @@ import { AngularFireStorageModule, AngularFireStorage } from '@angular/fire/stor
 import { AngularFireModule, FirebaseOptions } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
+import { SliderButtonComponent } from './slider-button/slider-button.component';
 
 const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
 
@@ -18,7 +19,8 @@ describe('AppComponent', () => {
         AppComponent,
         VideoBackgroundComponent,
         NameBoxComponent,
-        NavigationComponent
+        NavigationComponent,
+        SliderButtonComponent
       ],
       imports: [
         RouterTestingModule,

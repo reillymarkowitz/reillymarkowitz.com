@@ -1,3 +1,17 @@
-<a id="resumeButton" target="_blank" [href]="resumeUrl">Resume</a>
-<a id="githubButton" target="_blank" href="https://github.com/reillymarkowitz">GitHub</a>
-<a id="linkedinButton" target="_blank" href="https://www.linkedin.com/in/reillymarkowitz/">LinkedIn</a>
+<div id="container" *ngIf="isLoaded()">
+    <slider-button 
+        text="Resume" 
+        [href]="resumeUrl" 
+        [imgUrl]="resumeIconUrl">
+    </slider-button>
+    <slider-button 
+        text="GitHub" 
+        href="https://github.com/reillymarkowitz" 
+        [imgUrl]="githubIconUrl">
+    </slider-button>
+    <slider-button
+        text="LinkedIn"
+        href="https://www.linkedin.com/in/reillymarkowitz/"
+        [imgUrl]="linkedinIconUrl">
+    </slider-button>
+</div>
