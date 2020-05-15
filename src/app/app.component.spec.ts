@@ -2,13 +2,13 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { VideoBackgroundComponent } from './video-background/video-background.component';
-import { NameBoxComponent } from './name-box/name-box.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { NameBoxComponent } from './components/name-box/name-box.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 import { AngularFireStorageModule, AngularFireStorage } from '@angular/fire/storage';
 import { AngularFireModule, FirebaseOptions } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
-import { SliderButtonComponent } from './slider-button/slider-button.component';
+import { SliderButtonComponent } from './components/slider-button/slider-button.component';
 
 const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
 

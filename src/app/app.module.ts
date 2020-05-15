@@ -7,20 +7,20 @@ import { AngularFireModule, FirebaseOptions } from '@angular/fire';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorageModule, AngularFireStorage } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
-import { VideoBackgroundComponent } from './video-background/video-background.component';
-import { NameBoxComponent } from './name-box/name-box.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { SliderButtonComponent } from './slider-button/slider-button.component';
+import { NameBoxComponent } from './components/name-box/name-box.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { SliderButtonComponent } from './components/slider-button/slider-button.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
 
 @NgModule({
   declarations: [
     AppComponent,
-    VideoBackgroundComponent,
     NameBoxComponent,
     NavigationComponent,
-    SliderButtonComponent
+    SliderButtonComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
