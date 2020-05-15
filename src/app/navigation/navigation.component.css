@@ -8,6 +8,12 @@
     justify-content: center;
 }
 
+@media screen and (max-width: 600px) {
+    #container {
+        padding-top: 0;
+    }
+}
+
 @media screen and (min-width:1000px) {
     #container {
         width: 50%;

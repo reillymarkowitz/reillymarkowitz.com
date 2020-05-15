@@ -57,4 +57,9 @@ img {
     a {
         font-size: 6vw;
     }
+
+    .button {
+        height: 60px;
+        width: 200px;
+    }
 }
