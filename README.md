@@ -2,6 +2,8 @@
 
 ![Build Status](https://github.com/reillymarkowitz/reillymarkowitz.com/workflows/Firebase%20Continuous%20Deployment/badge.svg)
 
+![Angular Continuous Integration](https://github.com/reillymarkowitz/reillymarkowitz.com/workflows/Angular%20Continuous%20Integration/badge.svg)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
 
 ## Development server
