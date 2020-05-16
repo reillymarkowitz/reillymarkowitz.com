@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SliderButtonComponent } from './slider-button.component';
 import { By } from '@angular/platform-browser';
+import { MessageService } from 'src/app/services/message.service';
 
 describe('SliderButtonComponent', () => {
   let component: SliderButtonComponent;
@@ -8,12 +9,19 @@ describe('SliderButtonComponent', () => {
   let buttonText: HTMLAnchorElement;
   let slider: HTMLAnchorElement;
   let image: HTMLImageElement;
+  let messageServiceSpy: jasmine.SpyObj<MessageService>;
 
   beforeEach(async(() => {
+    const spy = jasmine.createSpyObj('MessageService', ['publishButtonLoadedEvent']);
+
     TestBed.configureTestingModule({
-      declarations: [ SliderButtonComponent ]
+      declarations: [ SliderButtonComponent ],
+      providers: [ { provide: MessageService, useValue: spy } ]
     })
-    .compileComponents();
+    .compileComponents()
+    .then(() => {
+      messageServiceSpy = TestBed.get(MessageService) as jasmine.SpyObj<MessageService>;
+    });
   }));
 
   beforeEach(() => {
@@ -57,5 +65,11 @@ describe('SliderButtonComponent', () => {
 
   it('should display the correct alt text', () => {
     expect(image.alt).toBe(component.text);
+  });
+
+  describe('messaging', () => {
+    it('should publish a ButtonLoadedEvent onInit', () => {
+      expect(messageServiceSpy.publishButtonLoadedEvent.calls.count()).toBe(1);
+    });
   });
 });

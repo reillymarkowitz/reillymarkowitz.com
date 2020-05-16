@@ -13,7 +13,7 @@ export class LoaderComponent implements OnInit {
 
   ngOnInit() {
     this.showLoader = true;
-    this.messageService.navigationLoaded.subscribe(event => {
+    this.messageService.navigationLoaded.subscribe(() => {
       this.showLoader = false;
       this.cd.detectChanges();
     });

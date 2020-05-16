@@ -17,7 +17,7 @@ export class SliderButtonComponent implements OnInit {
 
   ngOnInit() {
     const event: ButtonLoadedEvent = { button: this.getButtonEnum() };
-    this.messageService.buttonLoaded.emit(event);
+    this.messageService.publishButtonLoadedEvent(event);
   }
 
   getButtonEnum(): BUTTON {

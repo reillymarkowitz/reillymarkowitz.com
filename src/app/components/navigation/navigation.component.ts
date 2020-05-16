@@ -21,18 +21,7 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
     this.setResumeUrl();
     this.setButtonIconUrls();
-
-    const loadedButtons = new Set();
-    this.messageService.buttonLoaded.subscribe((event: ButtonLoadedEvent) => {
-      if (event.button !== BUTTON.Unknown) {
-        loadedButtons.add(event.button);
-      }
-
-      if (loadedButtons.size === 3) {
-        this.doneLoading = true;
-        this.messageService.navigationLoaded.emit();
-      }
-    });
+    this.publishNavigationLoadedEventOnButtonsLoaded();
   }
 
   setResumeUrl() {
@@ -51,5 +40,19 @@ export class NavigationComponent implements OnInit {
       url => { this[fieldName] = url; },
       error => { this[fieldName] = ''; }
     );
+  }
+
+  publishNavigationLoadedEventOnButtonsLoaded() {
+    const loadedButtons = new Set();
+    this.messageService.buttonLoaded.subscribe((event: ButtonLoadedEvent) => {
+      if (event.button !== BUTTON.Unknown) {
+        loadedButtons.add(event.button);
+      }
+
+      if (loadedButtons.size === 3) {
+        this.doneLoading = true;
+        this.messageService.navigationLoaded.emit();
+      }
+    });
   }
 }
