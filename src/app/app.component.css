@@ -1,3 +1,8 @@
+body {
+    margin: 0%;
+    background-color: rgb(42, 42, 42);
+}
+
 name-box {
     display: block;
     position: relative;
@@ -17,7 +22,7 @@ navigation {
 
 @media only screen and (max-width: 600px) {
     name-box {
-        top: 8%;
+        top: 0%;
         left: 10%;
         width: 80%;
         height: 25%;
@@ -26,6 +31,6 @@ navigation {
 
     navigation {
         left: 0%;
-        top: 15%;
+        top: 10%;
     }
 }

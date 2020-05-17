@@ -1,0 +1,53 @@
+.loader-background {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(42, 42, 42);
+}
+
+.container {
+    position: absolute;
+    height: 50px;
+    width: 135px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+
+div div.ball {
+    width: 20px;
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 999;
+}
+
+.ball-one {
+    background-color: #FFCE64;
+    animation: jump .5s ease 0s infinite alternate;
+}
+
+.ball-two {
+    background-color: #4BB3EF;
+    animation: jump .5s ease .15s infinite alternate;
+}
+
+.ball-three {
+    background-color: #63DD79;
+    animation: jump .5s ease .25s infinite alternate;
+}
+
+.ball-four {
+    background-color: #FD6C6C;
+    animation: jump .5s ease .35s infinite alternate;
+}
+
+@keyframes jump {
+    100% {
+        transform: translateY(-20px);
+    }   
+}
