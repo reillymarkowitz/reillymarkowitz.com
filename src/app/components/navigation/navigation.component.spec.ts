@@ -36,21 +36,26 @@ describe('NavigationComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('should publish a NavigationLoadedEvent after all buttons are loaded', () => {
-    const buttonLoadedEvents = [
-      { button: BUTTON.ResumeButton },
-      { button: BUTTON.LinkedInButton },
-      { button: BUTTON.GitHubButton }
-    ];
-
-    buttonLoadedEvents.forEach(event => {
-      messageService.publishButtonLoadedEvent(event);
+  describe('onInit', () => {
+    it('should create', () => {
+      expect(component).toBeTruthy();
     });
 
-    expect(navigationLoadedEmitSpy).toHaveBeenCalledTimes(1);
+    it('should publish a NavigationLoadedEvent after all buttons are loaded', () => {
+      const buttonLoadedEvents = [
+        { button: BUTTON.ResumeButton },
+        { button: BUTTON.LinkedInButton },
+        { button: BUTTON.GitHubButton }
+      ];
+  
+      messageService.publishButtonLoadedEvent(buttonLoadedEvents[0]);
+      expect(navigationLoadedEmitSpy).toHaveBeenCalledTimes(0);
+  
+      buttonLoadedEvents.forEach(event => {
+        messageService.publishButtonLoadedEvent(event);
+      });
+  
+      expect(navigationLoadedEmitSpy).toHaveBeenCalledTimes(1);
+    });
   });
 });

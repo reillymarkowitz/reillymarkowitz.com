@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SliderButtonComponent } from './slider-button.component';
 import { By } from '@angular/platform-browser';
 import { MessageService } from 'src/app/services/message.service';
+import { BUTTON } from 'src/app/models/button';
 
 describe('SliderButtonComponent', () => {
   let component: SliderButtonComponent;
@@ -43,33 +44,56 @@ describe('SliderButtonComponent', () => {
     return fixture.debugElement.query(By.css(selector)).nativeElement as HTMLAnchorElement;
   }
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('onInit', () => {
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
+
+    it('should publish a ButtonLoadedEvent', () => {
+      expect(messageServiceSpy.publishButtonLoadedEvent).toHaveBeenCalledTimes(1);
+    });
   });
 
-  it('should display the correct text', () => {
-    expect(buttonText.innerHTML).toBe(component.text);
+  describe('button', () => {
+    it('should display the correct text', () => {
+      expect(buttonText.innerHTML).toBe(component.text);
+    });
+  
+    it('should link to the correct url', () => {
+      expect(slider.href).toBe(component.href);
+    });
+  
+    it('should open link in a new tab', () => {
+      expect(slider.target).toBe('_blank');
+    });
+  
+    it('should display the correct image', () => {
+      expect(image.src).toBe(component.imgUrl);
+    });
+  
+    it('should display the correct alt text', () => {
+      expect(image.alt).toBe(component.text);
+    });
   });
 
-  it('should link to the correct url', () => {
-    expect(slider.href).toBe(component.href);
-  });
+  describe('getButtonEnum', () => {
+    it('should return Resume', () => {
+      component.text = 'Resume';
+      expect(component.getButtonEnum()).toBe(BUTTON.ResumeButton);
+    });
 
-  it('should open link in a new tab', () => {
-    expect(slider.target).toBe('_blank');
-  });
+    it('should return GitHub', () => {
+      component.text = 'GitHub';
+      expect(component.getButtonEnum()).toBe(BUTTON.GitHubButton);
+    });
 
-  it('should display the correct image', () => {
-    expect(image.src).toBe(component.imgUrl);
-  });
+    it('should return LinkedIn', () => {
+      component.text = 'LinkedIn';
+      expect(component.getButtonEnum()).toBe(BUTTON.LinkedInButton);
+    });
 
-  it('should display the correct alt text', () => {
-    expect(image.alt).toBe(component.text);
-  });
-
-  describe('messaging', () => {
-    it('should publish a ButtonLoadedEvent onInit', () => {
-      expect(messageServiceSpy.publishButtonLoadedEvent.calls.count()).toBe(1);
+    it('should return Unknown', () => {
+      expect(component.getButtonEnum()).toBe(BUTTON.Unknown);
     });
   });
 });
