@@ -1,23 +1,23 @@
 <div id="container" [hidden]="doneLoading">
     <div id="desktop-buttons" *ngIf="!isMobile">
-        <slider-button
+        <desktop-slider-button
             *ngIf="resumeIconUrl"
             text="Resume" 
             [href]="resumeUrl" 
             [imgUrl]="resumeIconUrl">
-        </slider-button>
-        <slider-button 
+        </desktop-slider-button>
+        <desktop-slider-button 
             *ngIf="githubIconUrl"
             text="GitHub" 
             href="https://github.com/reillymarkowitz" 
             [imgUrl]="githubIconUrl">
-        </slider-button>
-        <slider-button
+        </desktop-slider-button>
+        <desktop-slider-button
             *ngIf="linkedinIconUrl"
             text="LinkedIn"
             href="https://www.linkedin.com/in/reillymarkowitz/"
             [imgUrl]="linkedinIconUrl">
-        </slider-button>
+        </desktop-slider-button>
     </div>
     <div id="mobile-buttons" *ngIf="isMobile">
         <mobile-slider-button

@@ -5,16 +5,14 @@ describe('Home page', () => {
   let page: AppPage;
 
   beforeEach(() => {
+    browser.waitForAngularEnabled(false);
     page = new AppPage();
     page.navigateTo();
   });
 
-  it('should display correct page title', () => {
-    expect(browser.getTitle()).toEqual('Reilly Markowitz');
-  });
-
-  it('should autoplay background video', () => {
-    expect(page.isBackgroundVideoPlaying()).toBe(true);
+  it('should display correct page title', async () => {
+    const title = await browser.getTitle();
+    expect(title).toEqual('Reilly Markowitz');
   });
 
   afterEach(async () => {

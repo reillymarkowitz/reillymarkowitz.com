@@ -3,9 +3,10 @@ import { NavigationComponent } from './navigation.component';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFireModule, FirebaseOptions } from '@angular/fire';
 import { environment } from 'src/environments/environment';
-import { SliderButtonComponent } from '../slider-button/slider-button.component';
+import { DesktopSliderButtonComponent } from '../desktop-slider-button/desktop-slider-button.component';
 import { MessageService } from 'src/app/services/message.service';
 import { BUTTON } from 'src/app/models/button';
+import { MobileSliderButtonComponent } from '../mobile-slider-button/mobile-slider-button.component';
 
 const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
 
@@ -17,7 +18,7 @@ describe('NavigationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavigationComponent, SliderButtonComponent ],
+      declarations: [ NavigationComponent, DesktopSliderButtonComponent, MobileSliderButtonComponent ],
       imports: [
         AngularFireModule.initializeApp(firebaseConfig)
       ],
