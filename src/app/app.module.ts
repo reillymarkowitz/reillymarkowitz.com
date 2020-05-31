@@ -11,6 +11,7 @@ import { NameBoxComponent } from './components/name-box/name-box.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SliderButtonComponent } from './components/slider-button/slider-button.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { MobileSliderButtonComponent } from './components/mobile-slider-button/mobile-slider-button.component';
 
 const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
 
@@ -20,7 +21,8 @@ const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
     NameBoxComponent,
     NavigationComponent,
     SliderButtonComponent,
-    LoaderComponent
+    LoaderComponent,
+    MobileSliderButtonComponent
   ],
   imports: [
     BrowserModule,

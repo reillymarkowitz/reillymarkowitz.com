@@ -10,18 +10,25 @@ import { BUTTON } from 'src/app/models/button';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
+  private isMobile: boolean;
   private doneLoading: boolean;
   private resumeUrl: string;
   private resumeIconUrl: string;
   private githubIconUrl: string;
   private linkedinIconUrl: string;
+  private loadedButtons: Set<BUTTON>;
 
   constructor(private storage: AngularFireStorage, private messageService: MessageService) { }
 
   ngOnInit() {
+    this.isMobile = window.innerWidth <= 600;
+    this.setUrls();
+    this.publishNavigationLoadedEventOnButtonsLoaded();
+  }
+
+  setUrls() {
     this.setResumeUrl();
     this.setButtonIconUrls();
-    this.publishNavigationLoadedEventOnButtonsLoaded();
   }
 
   setResumeUrl() {
@@ -43,16 +50,25 @@ export class NavigationComponent implements OnInit {
   }
 
   publishNavigationLoadedEventOnButtonsLoaded() {
-    const loadedButtons = new Set();
-    this.messageService.buttonLoaded.subscribe((event: ButtonLoadedEvent) => {
-      if (event.button !== BUTTON.Unknown) {
-        loadedButtons.add(event.button);
-      }
+    this.loadedButtons = new Set();
 
-      if (loadedButtons.size === 3) {
-        this.doneLoading = true;
-        this.messageService.navigationLoaded.emit();
+    // prevents consumeButtonLoadedEvent from
+    // executing with a different 'this'
+    const boundConsumer = this.consumeButtonLoadedEvent.bind(this);
+    this.messageService.buttonLoaded.subscribe(boundConsumer);
+  }
+
+  consumeButtonLoadedEvent(event: ButtonLoadedEvent) {
+    if (event.button !== BUTTON.Unknown) {
+      this.loadedButtons.add(event.button);
+      if (this.loadedButtons.size === 3) {
+        this.publishNavigationLoadedEvent();
       }
-    });
+    }
+  }
+
+  publishNavigationLoadedEvent() {
+    this.doneLoading = true;
+    this.messageService.navigationLoaded.emit();
   }
 }

@@ -1,20 +1,36 @@
 <div id="container" [hidden]="doneLoading">
-    <slider-button
-        *ngIf="resumeIconUrl"
-        text="Resume" 
-        [href]="resumeUrl" 
-        [imgUrl]="resumeIconUrl">
-    </slider-button>
-    <slider-button 
-        *ngIf="githubIconUrl"
-        text="GitHub" 
-        href="https://github.com/reillymarkowitz" 
-        [imgUrl]="githubIconUrl">
-    </slider-button>
-    <slider-button
-        *ngIf="linkedinIconUrl"
-        text="LinkedIn"
-        href="https://www.linkedin.com/in/reillymarkowitz/"
-        [imgUrl]="linkedinIconUrl">
-    </slider-button>
+    <div id="desktop-buttons" *ngIf="!isMobile">
+        <slider-button
+            *ngIf="resumeIconUrl"
+            text="Resume" 
+            [href]="resumeUrl" 
+            [imgUrl]="resumeIconUrl">
+        </slider-button>
+        <slider-button 
+            *ngIf="githubIconUrl"
+            text="GitHub" 
+            href="https://github.com/reillymarkowitz" 
+            [imgUrl]="githubIconUrl">
+        </slider-button>
+        <slider-button
+            *ngIf="linkedinIconUrl"
+            text="LinkedIn"
+            href="https://www.linkedin.com/in/reillymarkowitz/"
+            [imgUrl]="linkedinIconUrl">
+        </slider-button>
+    </div>
+    <div id="mobile-buttons" *ngIf="isMobile">
+        <mobile-slider-button
+            text="Resume" 
+            [href]="resumeUrl">
+        </mobile-slider-button>
+        <mobile-slider-button 
+            text="GitHub" 
+            href="https://github.com/reillymarkowitz">
+        </mobile-slider-button>
+        <mobile-slider-button
+            text="LinkedIn"
+            href="https://www.linkedin.com/in/reillymarkowitz/">
+        </mobile-slider-button>
+    </div>
 </div>
