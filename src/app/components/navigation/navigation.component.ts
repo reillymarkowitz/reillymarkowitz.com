@@ -10,20 +10,24 @@ import { BUTTON } from 'src/app/models/button';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
+  doneLoading: boolean;
+  loadedButtons: Set<BUTTON>;
   private isMobile: boolean;
-  private doneLoading: boolean;
   private resumeUrl: string;
   private resumeIconUrl: string;
   private githubIconUrl: string;
   private linkedinIconUrl: string;
-  private loadedButtons: Set<BUTTON>;
 
   constructor(private storage: AngularFireStorage, private messageService: MessageService) { }
 
   ngOnInit() {
-    this.isMobile = window.innerWidth <= 600;
+    this.setIsMobile();
     this.setUrls();
     this.publishNavigationLoadedEventOnButtonsLoaded();
+  }
+
+  setIsMobile() {
+    this.isMobile = window.innerWidth <= 600;
   }
 
   setUrls() {
