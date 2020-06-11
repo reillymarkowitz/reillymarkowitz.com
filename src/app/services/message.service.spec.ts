@@ -5,14 +5,12 @@ import { BUTTON } from '../models/button';
 
 describe('EventServiceService', () => {
   let service: MessageService;
-  let buttonLoadedEmitSpy: jasmine.Spy;
-  let navigationLoadedEmitSpy: jasmine.Spy;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.get(MessageService);
-    buttonLoadedEmitSpy = spyOn(service.buttonLoaded, 'emit');
-    navigationLoadedEmitSpy = spyOn(service.navigationLoaded, 'emit');
+    spyOn(service.buttonLoaded, 'emit');
+    spyOn(service.navigationLoaded, 'emit');
   });
 
   it('should be created', () => {
@@ -25,8 +23,8 @@ describe('EventServiceService', () => {
 
       service.publishButtonLoadedEvent(event);
 
-      expect(buttonLoadedEmitSpy).toHaveBeenCalledTimes(1);
-      expect(buttonLoadedEmitSpy).toHaveBeenCalledWith(event);
+      expect(service.buttonLoaded.emit).toHaveBeenCalledTimes(1);
+      expect(service.buttonLoaded.emit).toHaveBeenCalledWith(event);
     });
   });
 
@@ -34,8 +32,8 @@ describe('EventServiceService', () => {
     it('should emit the event it\'s given', () => {
       service.publishNavigationLoadedEvent({});
 
-      expect(navigationLoadedEmitSpy).toHaveBeenCalledTimes(1);
-      expect(navigationLoadedEmitSpy).toHaveBeenCalledWith({});
+      expect(service.navigationLoaded.emit).toHaveBeenCalledTimes(1);
+      expect(service.navigationLoaded.emit).toHaveBeenCalledWith({});
     });
   });
 });

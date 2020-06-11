@@ -1,0 +1,26 @@
+a {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 6vw;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    left: 0;
+}
+
+.button {
+    display: inline-flex;
+    height: 60px;
+    width: 200px;
+    border: 2px solid white;
+    margin: 30px;
+    color: white;
+    text-decoration: none;
+    font-size: .8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}

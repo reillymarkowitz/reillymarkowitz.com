@@ -32,6 +32,10 @@ span {
       typing 3.5s steps(60, end),
       blink-caret .75s step-end infinite;
   }
+
+  .title {
+      width: min-content;
+  }
   
   @keyframes typing {
     from { width: 0 }
@@ -46,10 +50,6 @@ span {
 @media only screen and (max-width: 600px) {
     .name {
         font-size: 12vw;
-    }
-
-    .title {
-        width: 96%;
     }
 
     .title h1 {

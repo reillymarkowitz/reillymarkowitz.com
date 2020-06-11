@@ -19,3 +19,21 @@
         width: 50%;
     }
 }
+
+@media screen and (max-width: 349px) {
+    #mobile-buttons {
+        padding-left: 12%;
+    }
+}
+
+@media screen and (min-width: 350px) and (max-width: 499px) {
+    #mobile-buttons {
+        padding-left: 16%;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px) {
+    #mobile-buttons {
+        padding-left: 22%;
+    }
+}
