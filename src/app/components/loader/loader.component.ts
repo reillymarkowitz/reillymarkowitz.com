@@ -7,7 +7,7 @@ import { MessageService } from '../../services/message.service';
   styleUrls: ['./loader.component.css']
 })
 export class LoaderComponent implements OnInit {
-  private showLoader: boolean;
+  public showLoader: boolean;
 
   constructor(private messageService: MessageService, private cd: ChangeDetectorRef) { }
 

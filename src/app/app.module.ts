@@ -12,6 +12,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { DesktopSliderButtonComponent } from './components/desktop-slider-button/desktop-slider-button.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { MobileSliderButtonComponent } from './components/mobile-slider-button/mobile-slider-button.component';
+import { SliderButtonComponent } from './base-components/slider-button/slider-button.component';
 
 const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
 
@@ -22,7 +23,8 @@ const firebaseConfig: FirebaseOptions = environment.firebaseConfig;
     NavigationComponent,
     LoaderComponent,
     DesktopSliderButtonComponent,
-    MobileSliderButtonComponent
+    MobileSliderButtonComponent,
+    SliderButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -10,13 +10,13 @@ import { BUTTON } from 'src/app/models/button';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-  doneLoading: boolean;
-  loadedButtons: Set<BUTTON>;
-  private isMobile: boolean;
-  private resumeUrl: string;
-  private resumeIconUrl: string;
-  private githubIconUrl: string;
-  private linkedinIconUrl: string;
+  public doneLoading: boolean;
+  public loadedButtons: Set<BUTTON>;
+  public isMobile: boolean;
+  public resumeUrl: string;
+  public resumeIconUrl: string;
+  public githubIconUrl: string;
+  public linkedinIconUrl: string;
 
   constructor(private storage: AngularFireStorage, private messageService: MessageService) { }
 
